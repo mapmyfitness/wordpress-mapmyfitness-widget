@@ -1,4 +1,4 @@
-wordpress-mapmyfitenss-widget
+MapMyFitness Wordpress Plugin/Widgets
 =============================
 
 Wordpress MapMyFitness Widget - Community Supported
