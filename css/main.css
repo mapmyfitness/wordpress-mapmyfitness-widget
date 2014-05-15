@@ -1,0 +1,510 @@
+/* MMF Admin Popup */
+
+#mmf_admin_popup {
+    width: 800px;
+    height: 400px;
+    background-color: white;
+    -webkit-box-shadow: 0 5px 15px rgba(0, 0, 0, 0.7);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.7);
+    font-family: 'Open Sans', 'sans-serif' !important;
+}
+#mmf_admin_content {
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    left: 0px;
+}
+
+.mmf_loading {
+    background: url('../images/loading.gif') no-repeat transparent;
+    width: 16px;
+    height: 16px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+}
+
+#mmf-admin-popup-loader {
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 191px;
+    bottom: 48px;
+    background: none repeat scroll 0 0 rgba(0, 0, 0, 0.2);
+    z-index: 99999;
+    display: none;
+}
+
+#mmf-admin-popup-loader .mmf_loading {
+    left: 310px;
+    top: 180px;
+}
+
+.mmf-admin-leftmenu {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    width: 190px;
+    background-color: #F3F3F3;
+    padding: 10px 0 58px;
+    border-right: 1px solid #CCCCCC;
+}
+
+.mmf-admin-leftmenu li {
+    margin: 0;
+}
+
+.mmf-admin-leftmenu li:hover {
+    background-color: #E9E9E9;
+}
+
+.mmf-admin-leftmenu li a {
+    display: block;
+    font-size: 14px;
+    text-decoration: none;
+    line-height: 18px;
+    padding: 8px 20px;
+}
+
+.mmf-admin-leftmenu li a.selected {
+    color: #222222 !important;
+    font-weight: bold;
+}
+
+.mmf-admin-title {
+    font-size: 18px;
+    font-weight: 500;
+    height: 20px;
+    left: 191px;
+    padding: 22px 16px 10px;
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+
+.mmf-admin-rightcontent {
+    bottom: 48px;
+    left: 191px;
+    position: absolute;
+    right: 0;
+    top: 50px;
+    padding: 6px 16px 16px;
+    overflow-y: auto;
+}
+
+.mmf-admin-toolbar {
+    bottom: 0;
+    left: 191px;
+    position: absolute;
+    right: 0;
+    height: 48px;
+    background-color: #FCFCFC;
+    border-top: 1px solid #DFDFDF;
+}
+
+.mmf-admin-toolbar-buttons {
+    float: right;
+    padding: 9px;
+}
+
+.mmf-admin-form {
+    display: none;
+}
+
+.mmf-admin-logo {
+    background-image: url("../images/mmf-logo.png");
+    background-repeat: no-repeat;
+    background-size: 160px auto;
+    bottom: 0;
+    height: 38px;
+    left: 13px;
+    position: absolute;
+    width: 190px;
+}
+
+.mmf-admin-form > p:first-child {
+    margin-top: 0;
+}
+
+.mmf-tabs {
+    padding-top: 30px;
+}
+
+.mmf-tabs-inner {
+    border: 1px solid #CCCCCC;
+    position: relative;
+}
+
+.mmf-tabs .tab-selectors {
+    position: absolute;
+    top: -30px;
+    padding-left: 3px;
+}
+
+.mmf-tabs ul {
+    list-style: none;
+    margin: 0;
+}
+
+.mmf-tabs ul li {
+    float: left;
+    margin: 0 4px 0 0;
+}
+
+.mmf-tabs ul li a {
+    border: 1px solid #CCCCCC;
+    border-bottom: 0 none;
+    padding: 5px 8px;
+    background-color: #EEEEEE;
+    display: inline-block;
+    height: 18px;
+    cursor: pointer;
+    color: #222222;
+}
+
+.mmf-tabs ul li a:hover, .mmf-tabs ul li a:visited {
+    color: #222222;
+}
+
+.mmf-tabs ul li.active a {
+    background-color: #FFFFFF;
+    height: 19px;
+    font-weight: bold;
+}
+
+.mmf-tabs .tab-content {
+    clear: both;
+    padding: 0 10px;
+    display: inline-block;
+    width: 555px;
+}
+
+.mmf-tabs .tab-content div {
+    display: none;
+}
+
+a.disabled {
+    color: #888888;
+    text-decoration: none;
+    cursor: default;
+}
+
+a.disabled:hover {
+    text-decoration: none;
+    color: #888888;
+}
+
+
+/* Generic Widget Code */
+
+.mmf-exception {
+    background-color: #fdf7f7;
+    border-left: 3px solid #d9534f;
+    padding: 10px 10px 10px 20px;
+    font-family: 'Open Sans', 'sans-serif' !important;
+    font-size: 12px !important;
+}
+
+.mmf-exception-title {
+    color: #d9534f;
+    font-weight: bold;
+}
+
+.mmf-widget {
+    color: #424242 !important;
+    font-family: "Open Sans",sans-serif !important;
+    font-size: 12px;
+    line-height: 18px;
+    padding: 0;
+    margin: 20px 0;
+}
+
+.widget.mmf-widget {
+    margin-top: 0;
+    background: #ffffff !important;
+    /*padding: 10px 10px 0 !important;*/
+}
+
+.mmf-logo {
+    width: 110px;
+}
+
+.mmf-widget a, .mmf-widget a:visited {
+    color: #2F98D9 !important;
+    outline: 0 none !important;
+    text-decoration: none !important;
+}
+
+.mmf-widget a:hover,.mmf-widget a:focus {
+	color: #92bfdd !important;
+}
+
+.mmf-widget p {
+    margin: 0 0 5px !important;
+}
+
+.mmf-widget h1, .mmf-widget h2, .mmf-widget h3, .mmf-widget h4, .mmf-widget h5, .mmf-widget h6 {
+    clear: none;
+}
+
+.mmf-widget h2 {
+    color: #444444;
+    font: 600 24px "Open Sans",sans-serif;
+    text-transform: uppercase;
+    margin: 0px !important;
+    padding-bottom: 5px;
+}
+
+.mmf-widget h3 {
+    margin: 10px 0 5px 0;
+}
+
+.mmf-widget h4 {
+    color: #999999;
+    font: 400 12px "Open Sans",sans-serif !important;
+    text-transform: uppercase;
+    margin: 0 !important;
+}
+
+.mmf-widget a img, .mmf-widget img {
+    border: 0 !important;
+    box-shadow: none;
+}
+
+.mmf-widget header {}
+
+.mmf-widget .view-all {
+    float: right;
+    margin-top: 8px;
+}
+
+.mmf-widget .view-all a {
+    background-color: #EDEDED;
+    margin-right: 5px;
+    padding: 4px 10px;
+    border-radius: 4px;
+    -webkit-border-radius: 4px;
+}
+
+.mmf-widget footer {
+    margin-top: 5px;
+    border-top: 1px solid #C3C2C2;
+    padding: 5px;
+    text-align: right;
+    clear: both;
+}
+
+.mmf-widget img.logo {
+    height: 20px;
+}
+
+.mmf-widget header a.header-logo {
+    float: right;
+    margin-top: 8px;
+}
+
+.mmf-widget .large-number {
+    color: #434343;
+    font-size: 58px;
+    font-weight: 300;
+    line-height: 29px;
+    margin-top: 10px;
+}
+
+
+.mmf-widget .medium-number {
+    color: #434343;
+    font-size: 24px;
+    font-weight: 300;
+    line-height: 29px;
+}
+
+.mmf-widget .clr {
+    clear: both;
+}
+
+/* Recent Workouts Widget */
+
+.mmf-widget .recent-workout {
+    border-top: 1px solid #C3C2C2;
+    padding: 10px 0;
+}
+
+.mmf-widget .recent-workout .activity-image {
+    float: left;
+    height: 95px;
+    padding-left: 10px;
+    position: relative;
+}
+
+.mmf-widget .recent-workout .activity-image img {
+    width: 90px;
+    height: 90px;
+}
+
+.mmf-widget .recent-workout .activity-details {
+    padding: 8px 10px 0;
+    float: left;
+}
+
+.mmf-widget .recent-workout .activity-details .workout-description {
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
+.mmf-widget .recent-workout .activity-details .workout-data-point {
+    float: left;
+    padding: 5px 10px 0;
+    border-left: 1px solid #C3C2C2;
+}
+
+.mmf-widget .recent-workout .activity-details .workout-data-point:first-child {
+    padding-left: 0;
+    border-left: none;
+}
+
+.widget.mmf-widget .recent-workout:first-child {
+    border-top: 0;
+}
+
+.widget.mmf-widget .recent-workout .activity-details .workout-description {
+    font-size: 14px;
+}
+
+.widget.mmf-widget .recent-workout .activity-details .workout-data-point h4 {
+    font-size: 11px !important;
+}
+
+.widget.mmf-widget .recent-workout .activity-details .workout-data-point:first-child {
+    border-left: 1px solid #C3C2C2;
+    padding-left: 10px;
+}
+
+.widget.mmf-widget .recent-workout .activity-image {
+    height: 40px;
+}
+
+.widget.mmf-widget .recent-workout .activity-image img {
+    height: 40px;
+    width: 40px;
+    box-shadow: none;
+}
+
+.widget.mmf-widget .medium-number {
+    font-size: 14px;
+}
+
+.widget.mmf-widget img.logo {
+    height: 16px;
+}
+
+/* Course Leaderboards */
+
+.mmf-widget .leaderboard-table {
+    border: 1px solid #E6E6E5;
+    width: 100%;
+    font-size: 13px;
+    border-collapse: collapse;
+}
+
+.mmf-widget .leaderboard-table td, .mmf-widget .leaderboard-table th{
+    padding: 8px;
+    font-weight: normal;
+    border: 1px solid #E6E6E5;
+}
+
+.mmf-widget .leaderboard-table thead th {
+    background: #FBF9F9;
+    color: #666666;
+}
+
+.mmf-widget .leaderboard-table tr:nth-child(2n) {
+    background-color: #F9F9F9;
+}
+
+/* Friend Widget */
+
+.mmf-widget .mmf-friends {
+	margin-bottom: 5px;
+}
+
+.mmf-widget .mmf-friend {
+    width: 50%;
+    float: left;
+}
+
+.mmf-widget .mmf-friend-content {
+    height: 40px;
+    padding: 5px;
+}
+
+.mmf-widget .mmf-friend-content img {
+    width: 40px;
+    height: 40px;
+    float: left;
+
+}
+
+.mmf-widget .mmf-friend-content p {
+    width: 68px;
+    float: left;
+    margin: 0;
+    margin-left: 5px !important;
+}
+
+.mmf-widget .mmf-friend-content a {
+	display: block;
+	padding: 5px;
+}
+
+/* Aggregates Widget */
+
+.mmf-aggregates-widget {
+    padding-bottom: 10px;
+}
+
+.mmf-aggregate {
+    background: #eeeeee;
+    margin-top: 10px;
+    padding: 6px;
+}
+
+.mmf-aggregate:first-child {
+    margin-top: 0;
+}
+
+.mmf-aggregate img {
+    height: 75px;
+}
+
+.mmf-aggregate-image {
+    float: left;
+    width: 75px;
+    height: 75px;
+}
+
+.mmf-aggregate-data {
+    text-align: center;
+    margin-left: 75px;
+    padding: 10px 0;
+    font-size: 12px !important;
+}
+
+.mmf-aggregate-statdata {
+    font-size: 16px !important;
+    line-height: 26px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.mmf-evelation-label {
+    font-size: 14px;
+    padding: 8px 0 3px;
+    font-weight: 600;
+}
+
+.mmf-route-map, .mmf-course-map {
+    position: relative;
+}
